@@ -37,7 +37,7 @@ resource "aws_route_table_association" "my-public-rtba" {
 }
 
 resource "aws_eip" "my-eip" {
-    domain = true
+    domain = "vpc"
   
 }
 
