@@ -56,7 +56,7 @@ resource "aws_route_table" "my-private-route" {
   
 }
 
-resource "aws_route_table_association" "" {
+resource "aws_route_table_association" "my-private-rtba" {
   for_each = {for key , subnet in var.subnets : key => subnet if subnet.public == false}
   subnet_id = aws_subnet.my-public-subnet[each.key].id
   route_table_id = aws_route_table.my-private-route.id
